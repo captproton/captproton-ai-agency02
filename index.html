@@ -4,93 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NexusAI - Leading AI Agency</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">NexusAI</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<body class="bg-white">
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-gray-800">NexusAI</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-blue-500 transition duration-300">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-blue-500 transition duration-300">Services</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-500 transition duration-300">About</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-500 transition duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <h1>Transform Your Business with AI</h1>
-        <p>Unlock the power of artificial intelligence with our cutting-edge solutions</p>
-        <a href="#contact" class="cta-button">Get Started</a>
+    <section id="home" class="pt-24 md:pt-32 bg-gradient-to-br from-gray-900 to-black text-white min-h-screen flex items-center">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Transform Your Business with AI</h1>
+            <p class="text-xl md:text-2xl mb-8">Unlock the power of artificial intelligence with our cutting-edge solutions</p>
+            <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 inline-block">Get Started</a>
+        </div>
     </section>
 
-    <section id="services" class="services">
-        <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-robot"></i>
-                <h3>AI Consulting</h3>
-                <p>Strategic guidance for implementing AI solutions in your business</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-brain"></i>
-                <h3>Machine Learning Solutions</h3>
-                <p>Custom ML models for predictive analytics and automation</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Data Analytics</h3>
-                <p>Transform your data into actionable insights</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-comments"></i>
-                <h3>Chatbot Development</h3>
-                <p>Intelligent conversational AI for customer service</p>
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2">
+                    <i class="fas fa-robot text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">AI Consulting</h3>
+                    <p class="text-gray-600">Strategic guidance for implementing AI solutions in your business</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2">
+                    <i class="fas fa-brain text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Machine Learning Solutions</h3>
+                    <p class="text-gray-600">Custom ML models for predictive analytics and automation</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2">
+                    <i class="fas fa-chart-line text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Data Analytics</h3>
+                    <p class="text-gray-600">Transform your data into actionable insights</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg transition duration-300 hover:-translate-y-2">
+                    <i class="fas fa-comments text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Chatbot Development</h3>
+                    <p class="text-gray-600">Intelligent conversational AI for customer service</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>NexusAI is a leading AI agency helping businesses leverage the power of artificial intelligence. With our expert team and cutting-edge technology, we deliver innovative solutions that drive growth and efficiency.</p>
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">About Us</h2>
+            <p class="text-gray-600 text-lg">NexusAI is a leading AI agency helping businesses leverage the power of artificial intelligence. With our expert team and cutting-edge technology, we deliver innovative solutions that drive growth and efficiency.</p>
+        </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-form">
-            <form>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
-                <button type="submit" class="cta-button">Send Message</button>
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Contact Us</h2>
+            <form class="space-y-6">
+                <div>
+                    <input type="text" placeholder="Name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition duration-300">
+                </div>
+                <div>
+                    <input type="email" placeholder="Email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition duration-300">
+                </div>
+                <div>
+                    <textarea placeholder="Message" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition duration-300 h-32"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300">Send Message</button>
             </form>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>NexusAI</h4>
-                <p>Transforming businesses through AI innovation</p>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <p>Email: info@nexusai.com</p>
-                <p>Phone: (555) 123-4567</p>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">NexusAI</h4>
+                    <p class="text-gray-400">Transforming businesses through AI innovation</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contact</h4>
+                    <p class="text-gray-400">Email: info@nexusai.com</p>
+                    <p class="text-gray-400">Phone: (555) 123-4567</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 NexusAI. All rights reserved.</p>
+            <div class="border-t border-gray-800 pt-6 text-center text-gray-400">
+                <p>&copy; 2024 NexusAI. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
