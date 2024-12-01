@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,6 @@
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="text-2xl font-bold text-gray-800">NexusAI</div>
-                <!-- Mobile menu button -->
                 <button 
                     data-mobile-menu
                     class="md:hidden text-gray-600 hover:text-gray-800 focus:outline-none" 
@@ -20,7 +19,6 @@
                     aria-expanded="false">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
-                <!-- Navigation links -->
                 <div data-nav-menu class="hidden md:flex md:items-center md:space-x-8 absolute md:relative left-0 right-0 top-full md:top-auto bg-white md:bg-transparent shadow-lg md:shadow-none p-6 md:p-0 transition-all duration-300 ease-in-out">
                     <a href="#home" class="block py-2 md:py-0 text-gray-600 hover:text-blue-500 transition duration-300">Home</a>
                     <a href="#services" class="block py-2 md:py-0 text-gray-600 hover:text-blue-500 transition duration-300">Services</a>
@@ -130,8 +128,9 @@
             const mobileMenuBtn = document.querySelector('[data-mobile-menu]');
             const mobileMenu = document.querySelector('[data-nav-menu]');
             const menuIcon = mobileMenuBtn.querySelector('i');
+            const headerHeight = document.querySelector('header').offsetHeight;
 
-            // Function to close menu when clicking a link
+            // Function to close menu
             const closeMenu = () => {
                 mobileMenu.classList.add('hidden');
                 menuIcon.classList.remove('fa-times');
@@ -139,25 +138,40 @@
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
             };
 
-            // Toggle menu
+            // Handle mobile menu toggle
             mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
                 const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-                mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
-
-                // Toggle icon
-                if (!isExpanded) {
+                
+                if (isExpanded) {
+                    closeMenu();
+                } else {
+                    mobileMenu.classList.remove('hidden');
                     menuIcon.classList.remove('fa-bars');
                     menuIcon.classList.add('fa-times');
-                } else {
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'true');
                 }
             });
 
-            // Close menu when clicking navigation links
-            document.querySelectorAll('[data-nav-menu] a').forEach(link => {
-                link.addEventListener('click', closeMenu);
+            // Handle navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            closeMenu();
+                        }
+                    }
+                });
             });
 
             // Close menu when clicking outside
